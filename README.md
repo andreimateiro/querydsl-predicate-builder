@@ -6,9 +6,10 @@ Quick setup
 1. Add Maven dependencies 
     ```
     <dependency>
-         <groupId>ro.andreimatei</groupId>
-         <artifactId>querydsl-predicate-builder</artifactId>
-     </dependency>
+        <groupId>ro.andreimatei</groupId>
+        <artifactId>querydsl-predicate-builder</artifactId>
+        <version>1.0</version>
+    </dependency>
     <dependency>
          <groupId>com.querydsl</groupId>
          <artifactId>querydsl-jpa</artifactId>
