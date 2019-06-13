@@ -6,8 +6,8 @@ Quick setup
 1. Add Maven dependencies 
     ```
     <dependency>
-         <groupId>ro.andreimatei.querydsl</groupId>
-         <artifactId>predicatebuilder</artifactId>
+         <groupId>ro.andreimatei</groupId>
+         <artifactId>querydsl-predicate-builder</artifactId>
      </dependency>
     <dependency>
          <groupId>com.querydsl</groupId>
@@ -26,7 +26,9 @@ Quick setup
          <version>4.1.4</version>
     </dependency>
     ```
-2. Add Maven build plugin
+2. Add Maven build plugin (JPA/Mongodb)
+    
+    2.1 JPA 
     ```
     <plugin>
         <groupId>com.mysema.maven</groupId>
@@ -40,6 +42,27 @@ Quick setup
                 <configuration>
                     <outputDirectory>target/generated-sources/java</outputDirectory>
                     <processor>com.querydsl.apt.jpa.JPAAnnotationProcessor</processor>
+                </configuration>
+            </execution>
+        </executions>
+    </plugin>
+    ```
+    2.2 MongoDB
+    ```asp
+    <plugin>
+        <groupId>com.mysema.maven</groupId>
+        <artifactId>apt-maven-plugin</artifactId>
+        <version>1.1.3</version>
+        <executions>
+            <execution>
+                <goals>
+                    <goal>process</goal>
+                </goals>
+                <configuration>
+                    <outputDirectory>target/generated-sources/java</outputDirectory>
+                    <processor>
+                        org.springframework.data.mongodb.repository.support.MongoAnnotationProcessor
+                    </processor>
                 </configuration>
             </execution>
         </executions>
@@ -64,7 +87,7 @@ Quick setup
     ClassNameRepository.findAll(queryDSLPredicatesBuilder.with(filter).build(), pageable);
     ```
     
- Note:
+ Notes:
  
  If you intend to use a class that inherits from an external dependency:
  Create `package-info.java` at module level with the following structure:
