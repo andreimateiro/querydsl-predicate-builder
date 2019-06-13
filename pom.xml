@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ro.andreimatei</groupId>
     <artifactId>querydsl-predicate-builder</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
 
     <name>QueryDSL Predicate Builder</name>
     <description>Helper project to build QueryDSL predicates faster</description>
@@ -32,7 +30,8 @@
         <connection>scm:git:git://github.com:andreimateiro/querydsl-predicate-builder.git</connection>
         <developerConnection>scm:git:ssh://github.com:andreimateiro/querydsl-predicate-builder.git</developerConnection>
         <url>https://github.com/andreimateiro/querydsl-predicate-builder/tree/master</url>
-    </scm>
+      <tag>querydsl-predicate-builder-1.0</tag>
+  </scm>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
