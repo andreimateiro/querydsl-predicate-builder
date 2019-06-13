@@ -9,7 +9,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * @author Andrei-Vlad Matei <andrei@andreimatei.ro>
+ * @author <a href="mailto:andrei@andreimatei.ro">Andrei-Vlad Matei</a>
  */
 public final class QueryDSLPredicatesBuilder<T> {
     private final List<SearchCriteria> params;

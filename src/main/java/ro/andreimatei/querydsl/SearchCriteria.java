@@ -1,7 +1,7 @@
 package ro.andreimatei.querydsl;
 
 /**
- * @author Andrei-Vlad Matei <andrei@andreimatei.ro>
+ * @author <a href="mailto:andrei@andreimatei.ro">Andrei-Vlad Matei</a>
  */
 public class SearchCriteria {
 
