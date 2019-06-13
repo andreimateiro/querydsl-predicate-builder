@@ -1,5 +1,5 @@
-# predicatebuilder
-QueryDSL dynamic predicate builder
+# QueryDSL Predicate Builder
+
 
 Quick setup
 
