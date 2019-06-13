@@ -1,4 +1,4 @@
-package ro.andreimatei.exceptions;
+package ro.andreimatei.querydsl.exceptions;
 
 /**
  * @author Andrei-Vlad Matei <andrei@andreimatei.ro>

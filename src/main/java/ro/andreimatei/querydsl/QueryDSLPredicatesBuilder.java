@@ -1,7 +1,7 @@
 package ro.andreimatei.querydsl;
 
 import com.querydsl.core.types.dsl.BooleanExpression;
-import ro.andreimatei.exceptions.QueryDSLPredicateBuildException;
+import ro.andreimatei.querydsl.exceptions.QueryDSLPredicateBuildException;
 
 import java.util.ArrayList;
 import java.util.List;

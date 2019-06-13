@@ -1,7 +1,7 @@
 package ro.andreimatei.querydsl;
 
 import com.querydsl.core.types.dsl.*;
-import ro.andreimatei.exceptions.QueryDSLPredicateBuildException;
+import ro.andreimatei.querydsl.exceptions.QueryDSLPredicateBuildException;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeParseException;

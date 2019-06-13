@@ -2,7 +2,7 @@ package ro.andreimatei.querydsl;
 
 import com.querydsl.core.types.dsl.BooleanExpression;
 import org.junit.Test;
-import ro.andreimatei.exceptions.QueryDSLPredicateBuildException;
+import ro.andreimatei.querydsl.exceptions.QueryDSLPredicateBuildException;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
