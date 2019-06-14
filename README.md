@@ -21,11 +21,6 @@ Quick setup
         <version>4.1.4</version>
         <scope>provided</scope>
     </dependency>
-    <dependency>
-         <groupId>com.querydsl</groupId>
-         <artifactId>querydsl-jpa</artifactId>
-         <version>4.1.4</version>
-    </dependency>
     ```
 2. Add Maven build plugin (JPA/Mongodb)
     
