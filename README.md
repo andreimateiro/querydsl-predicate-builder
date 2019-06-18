@@ -13,12 +13,12 @@ Quick setup
     <dependency>
          <groupId>com.querydsl</groupId>
          <artifactId>querydsl-jpa</artifactId>
-         <version>4.1.4</version>
+         <version>4.2.1</version>
     </dependency>
     <dependency>  
         <groupId>com.querydsl</groupId>
         <artifactId>querydsl-apt</artifactId>
-        <version>4.1.4</version>
+        <version>4.2.1</version>
         <scope>provided</scope>
     </dependency>
     ```
