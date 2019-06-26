@@ -32,6 +32,8 @@ public class QueryDSLPredicate<T> {
                     } else {
                         return path.equalsIgnoreCase(criteria.getValue().toString());
                     }
+                case ";":
+                    return path.containsIgnoreCase(criteria.getValue().toString());
                 case "!":
                     return path.notEqualsIgnoreCase(criteria.getValue().toString());
                 default:
@@ -138,15 +140,6 @@ public class QueryDSLPredicate<T> {
         }
 
         return returnType;
-    }
-
-    private static boolean isNumeric(final String str) {
-        try {
-            Integer.parseInt(str);
-        } catch (final NumberFormatException e) {
-            return false;
-        }
-        return true;
     }
 
     private static boolean isLong(final String str) {

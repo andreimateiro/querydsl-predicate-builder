@@ -17,14 +17,6 @@ public class QueryDSLPredicatesBuilderTest {
 
     private static String INVALID_OPERATOR = "^";
 
-    class DummyClass {
-        public String stringField1;
-        public LocalDateTime localDateTimeField1;
-        public long longField1;
-        public UUID uuidField1;
-        public Boolean booleanField1;
-    }
-
     // Positive tests
 
     @Test
@@ -43,6 +35,12 @@ public class QueryDSLPredicatesBuilderTest {
     public void testStringFieldNotEquals() throws Exception {
         BooleanExpression expression = new QueryDSLPredicatesBuilder<>(DummyClass.class).with("stringField1", "!", "value").build();
         assertEquals(expression.toString(), "!(eqIc(DummyClass.stringField1,value))");
+    }
+
+    @Test
+    public void testStringFieldContains() throws Exception {
+        BooleanExpression expression = new QueryDSLPredicatesBuilder<>(DummyClass.class).with("stringField1", ";", "value").build();
+        assertEquals(expression.toString(), "containsIc(DummyClass.stringField1,value)");
     }
 
     @Test

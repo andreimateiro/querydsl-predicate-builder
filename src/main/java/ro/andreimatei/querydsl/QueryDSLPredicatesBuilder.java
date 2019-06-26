@@ -12,22 +12,22 @@ import java.util.regex.Pattern;
  * @author <a href="mailto:andrei@andreimatei.ro">Andrei-Vlad Matei</a>
  */
 public final class QueryDSLPredicatesBuilder<T> {
-    private final List<SearchCriteria> params;
+    private final List<SearchCriteria> searchCriteriaList;
     private final Class<T> entityClass;
 
     public QueryDSLPredicatesBuilder(Class<T> entityClass) {
-        this.params = new ArrayList<>();
+        this.searchCriteriaList = new ArrayList<>();
         this.entityClass = entityClass;
     }
 
     public QueryDSLPredicatesBuilder with(final String key, final String operation, final Object value) {
-        params.add(new SearchCriteria(key, operation, value));
+        searchCriteriaList.add(new SearchCriteria(key, operation, value));
         return this;
     }
 
     public QueryDSLPredicatesBuilder with(final String search) {
-        Pattern pattern = Pattern.compile("([^,]+?)(:|!|<|>)([^,]+?),");
-        Matcher matcher = pattern.matcher(search + ",");
+        Pattern pattern = Pattern.compile("([^,]+)([:;!<>])([^,]+)");
+        Matcher matcher = pattern.matcher(search);
         while (matcher.find()) {
             this.with(matcher.group(1), matcher.group(2), matcher.group(3));
         }
@@ -35,13 +35,13 @@ public final class QueryDSLPredicatesBuilder<T> {
     }
 
     public BooleanExpression build() throws QueryDSLPredicateBuildException {
-        if (params.size() == 0) {
+        if (searchCriteriaList.size() == 0) {
             return null;
         }
 
         final List<BooleanExpression> predicates = new ArrayList<>();
         QueryDSLPredicate<T> predicate;
-        for (final SearchCriteria param : params) {
+        for (final SearchCriteria param : searchCriteriaList) {
             predicate = new QueryDSLPredicate<>(param);
             final BooleanExpression exp = predicate.getPredicate(entityClass);
             if (exp != null) {
@@ -54,5 +54,9 @@ public final class QueryDSLPredicatesBuilder<T> {
             result = result.and(predicates.get(i));
         }
         return result;
+    }
+
+    public List<SearchCriteria> getSearchCriteriaList() {
+        return searchCriteriaList;
     }
 }

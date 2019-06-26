@@ -1,5 +1,7 @@
 package ro.andreimatei.querydsl;
 
+import java.util.Objects;
+
 /**
  * @author <a href="mailto:andrei@andreimatei.ro">Andrei-Vlad Matei</a>
  */
@@ -26,5 +28,20 @@ public class SearchCriteria {
 
     public Object getValue() {
         return value;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SearchCriteria that = (SearchCriteria) o;
+        return Objects.equals(key, that.key) &&
+                Objects.equals(operation, that.operation) &&
+                Objects.equals(value, that.value);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(key, operation, value);
     }
 }
