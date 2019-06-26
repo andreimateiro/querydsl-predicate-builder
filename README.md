@@ -8,7 +8,7 @@ Quick setup
     <dependency>
         <groupId>ro.andreimatei</groupId>
         <artifactId>querydsl-predicate-builder</artifactId>
-        <version>1.0</version>
+        <version>1.1</version>
     </dependency>
     <dependency>
          <groupId>com.querydsl</groupId>
